@@ -37,7 +37,7 @@ body {
   grid-area: nav;
   display: grid;
   grid-template-areas: 'nav__left nav__right';
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 50px;
 }
 .nav__left {
@@ -69,8 +69,7 @@ body {
 .sidebar-toggle span {
   display: block;
   width: 28px;
-  height: 3px;
-  border-radius: 3px;
+  height: 1px;
   background-color: var(--color-light);
   transition: all 0.5s;
 }
@@ -84,7 +83,6 @@ body {
   left: -10px;
   top: -6px;
   opacity: 0;
-  cursor: pointer;
   z-index: 3;
 }
 
@@ -115,13 +113,13 @@ body {
   height: 20px;
   justify-content: space-between;
   position: relative;
-  margin-left: .6rem;
+  margin: 0 1rem;
   z-index: 2;
 }
 .menu-toggle span {
   display: block;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 3px;
   background-color: var(--color-light);
   transition: all 0.5s;
@@ -133,7 +131,6 @@ body {
   left: -25px;
   top: -6px;
   opacity: 0;
-  cursor: pointer;
   z-index: 3;
 }
 
@@ -162,40 +159,53 @@ body {
   align-items: center;
   padding: 0 1rem;
 }
-.nav__right ul li {
+.nav__right ul {
   list-style: none;
-  display: inline-block;
+  display: flex;
+  background: rgba(0,0,0, 0.2);
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color-light);
+  width: 70%;
 }
 .voucher {
   background: var(--color-primary);
   color: var(--color-light);
-  padding: .2rem .7rem;
+  padding: .2rem .5rem;
   border-radius: .2rem;
-  border: 1px solid var(--color-light);
+}
+.profile-img {
+  display: flex;
+  align-items: center;
+}
+.profile-img img {
+  width: 2rem;
+  border-radius: 50%;
+  margin: 0 .2rem;
 }
 
 /*=== Sidebar ===*/
 .sidebar {
   grid-area: sidebar;
-  background: red;
+  background: var(--bg-dark-secondary);
 }
 
 /*=== Main ===*/
 .main {
   grid-area: main;
-  background: blue;
+  background: var(--color-dark-secondary);
 }
 
 /*=== Orders ===*/
 .orders {
   grid-area: order;
-  background: green;
+  background: var(--color-dark-primary);
 }
 
 /*=== Footer ===*/
 .footer {
   grid-area: footer;
-  background: orange;
+  background: var(--color-dark-primary);
 }
 
 /*=== Mobile ===*/
@@ -209,7 +219,9 @@ body {
     grid-template-rows: 50px 1fr 1fr 2fr;
   }
 
-  .nav__left {}
+  .nav__left {
+    
+  }
   .search {
     display: none;
   }
@@ -226,7 +238,7 @@ body {
     top: 34px;
     height: 100%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     background: var(--color-light);
     width: 80%;
@@ -237,9 +249,10 @@ body {
   }
 
   .nav__right ul.slide {
-    transform: translate(-30%);
+    transform: translate(-10%);
     opacity: 1;
   }
   .nav__right ul li {
+    
   }
 }
